@@ -38,6 +38,7 @@ public class TutorialMod
     public TutorialMod(FMLJavaModLoadingContext context)
     {
         int x = 100;
+        String hello = "hello world";
 
         IEventBus modEventBus = context.getModEventBus();
 
