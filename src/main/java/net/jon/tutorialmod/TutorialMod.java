@@ -1,6 +1,8 @@
 package net.jon.tutorialmod ;
 
 import com.mojang.logging.LogUtils;
+import net.jon.tutorialmod.item.ModCreativeModeTabs;
+import net.jon.tutorialmod.item.ModItems;
 import net.minecraft.client.Minecraft;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.food.FoodProperties;
@@ -37,10 +39,13 @@ public class TutorialMod
 
     public TutorialMod(FMLJavaModLoadingContext context)
     {
-        int x = 100;
-        String hello = "hello world";
 
         IEventBus modEventBus = context.getModEventBus();
+
+        ModCreativeModeTabs.register(modEventBus);
+
+        //make sure that the item is actually added into the game
+        ModItems.register(modEventBus);
 
         modEventBus.addListener(this::commonSetup);
 
@@ -57,7 +62,13 @@ public class TutorialMod
 
     private void addCreative(BuildCreativeModeTabContentsEvent event)
     {
-
+        //with this you can now add the item to the creative tab
+        if (event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
+            event.accept(ModItems.SAPPHIRE);
+        }
+        if (event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
+            event.accept(ModItems.RAW_SAPPHIRE);
+        }
     }
 
     // You can use SubscribeEvent and let the Event Bus discover methods to call
