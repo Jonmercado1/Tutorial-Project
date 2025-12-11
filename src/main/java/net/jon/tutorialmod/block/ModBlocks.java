@@ -27,13 +27,10 @@ public class ModBlocks {
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block) {
         // registers the block
         RegistryObject<T> toReturn = BLOCKS.register(name, block);
-
-        // register the block item
         registerBlockItem(name, toReturn);
         return toReturn;
     }
-    // we need to do this since when we create a block with the deferred register it dosen't have an item associated with it.
-    private static <T extends Block> RegistryObject<Item> registerBlockItem(String name, RegistryObject<T> block) {
+    private static <T extends Block>RegistryObject<Item> registerBlockItem(String name, RegistryObject<T> block) {
         return ModItems.ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties()));
     }
 
