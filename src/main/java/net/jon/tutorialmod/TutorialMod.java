@@ -39,6 +39,7 @@ public class TutorialMod
 
     public TutorialMod(FMLJavaModLoadingContext context)
     {
+        String test_push = "test push";
 
         IEventBus modEventBus = context.getModEventBus();
 
