@@ -1,6 +1,7 @@
 package net.jon.tutorialmod ;
 
 import com.mojang.logging.LogUtils;
+import net.jon.tutorialmod.block.ModBlocks;
 import net.jon.tutorialmod.item.ModCreativeModeTabs;
 import net.jon.tutorialmod.item.ModItems;
 import net.minecraft.client.Minecraft;
@@ -39,7 +40,7 @@ public class TutorialMod
 
     public TutorialMod(FMLJavaModLoadingContext context)
     {
-        String test_push2 = "test push 2";
+
 
         IEventBus modEventBus = context.getModEventBus();
 
@@ -47,6 +48,7 @@ public class TutorialMod
 
         //make sure that the item is actually added into the game
         ModItems.register(modEventBus);
+        ModBlocks.register(modEventBus);
 
         modEventBus.addListener(this::commonSetup);
 
