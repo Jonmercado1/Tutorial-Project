@@ -5,6 +5,8 @@
   "item.tutorialmod.strawberry": "Strawberry",
   "item.tutorialmod.pine_cone": "Pine Cone",
 
+  "tooltip.tutorialmod.metal_detector.tooltip": "Finds valueables underground",
+
   "block.tutorialmod.raw_sapphire_block": "Raw Sapphire Block",
   "block.tutorialmod.sapphire_block": "Sapphire Block",
   "block.tutorialmod.sound_block": "Sound Block",
